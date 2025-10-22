@@ -4,4 +4,3 @@ green
 white
 blue
 red
-pink
