@@ -4,3 +4,6 @@ green
 white
 blue
 red
+
+
+If there are different commits between the local and remote branches, Git prompts to resolve the conflict by editing the affected files. After resolving the conflicts and committing the changes, I can push the updated branch to the remote repository.
