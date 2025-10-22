@@ -1,0 +1,10 @@
+14. Om branch main, there is a file countries.txt with two countries, which I added from branch main.
+15. There is a commit related to the main branch.
+16. Here is the file countries.txt with 4 countries (2 from the main branch, 2 added from the add-countries branch)
+17. Here are two logs: related to the main and add-countries branches.
+18. Here are two files: countries.txt with two countries from the main, and cities.txt with two cities from the branch add-cities.
+19. Here are two logs: related to the main and add-cities branches.
+22. countries.txt contains all 4 countries.
+23. I can see commits from both merged branches and the two merged branches on top of the HEAD.
+25. Here are all the files with the full content from all branches.
+26. Here I can see all the commits from all three branches, the last merge log, and that the main branch is on top of the HEAD.
