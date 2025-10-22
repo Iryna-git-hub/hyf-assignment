@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --primary-bg-color: rgb(215, 215, 215);
+      }
+      aside {
+        flex: 3;
+        background-color: var(--primary-bg-color);
+      }
+      footer {
+        background-color: var(--primary-bg-color);
+        padding: 25px;
+        margin-top: 30px;
+      }
+      main {
+        border: 1px solid #d5d5d5;
+        padding: 25px;
+        display: flex;
+        justify-content: space-around;
+      }
+      section {
+        flex: 3;
+      }
+      span {
+        color: goldenrod;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Blog title</h1>
+      <p>Blog tagline</p>
+    </header>
+    
+    <main>
+      <section>
+        <h2>First section heading</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi,
+          atque!
+        </p>
+      </section>
+      <section>
+        <h2>Second section heading</h2>
+        <ul>
+          <li><a href="#">recent posts 1</a></li>
+          <li><a href="#">recent posts 2</a></li>
+          <li><a href="#">recent posts 3</a></li>
+          <li><a href="#">recent posts 4</a></li>
+        </ul>
+        <!-- div and span below are non-semantic tags -->
+        <div>
+          Lorem ipsum dolor sit amet <span>consectetur adipisicing elit</span>.
+          Dolorem ipsa nostrum ab in harum reiciendis, fuga voluptatum quia
+          tempore ullam officiis mollitia repellendus ipsum dolores?
+        </div>
+      </section>
+      <aside>
+      <h3>Aside heading</h3>
+      <ul>
+        <li><a href="#">favorite link 1</a></li>
+        <li><a href="#">favorite link 2</a></li>
+        <li><a href="#">favorite link 3</a></li>
+      </ul>
+    </aside>
+    </main>
+    <footer>
+      <p>&copy; Copyright 2025</p>
+    </footer>
+  </body>
+</html>

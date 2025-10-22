@@ -1,0 +1,56 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+form {
+    margin: 100px auto 0;
+    width: 50%;
+}
+
+input, select, textarea, button {
+    margin: 5px 0 25px;
+    padding: 5px;
+}
+
+button {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+input, textarea {
+    width: 100%;
+} 
+
+input:focus, textarea:focus {
+    background-color: rgb(255, 244, 226);
+}
+
+select, button {
+    width: 50%;
+}
+
+div {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 170px;
+    padding: 20px;
+    color: white;
+    background-color: coral; 
+    font-weight: 700;
+    animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  50% {width: 300px;}
+}
+
+@media only screen and (min-width: 1024px) {
+    @keyframes mymove {
+  50% {width: 500px;}
+}
+}
