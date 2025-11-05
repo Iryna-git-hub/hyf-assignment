@@ -85,8 +85,9 @@ const secondWords = [
   "Unicorn",
   "Circuit",
 ];
-const randomNumber = Math.floor(Math.random() * 10);
-let startupName = firstWords[randomNumber] + " " + secondWords[randomNumber];
+const randomNumberFirst = Math.floor(Math.random() * 10);
+const randomNumberSecond = Math.floor(Math.random() * 10);
+let startupName = firstWords[randomNumberFirst] + " " + secondWords[randomNumberSecond];
 console.log(
   'The startup: "' +
     startupName +
