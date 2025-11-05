@@ -1,22 +1,21 @@
 // Age-ify (A future age calculator)
 let yearOfBirth = 1927;
 let yearFuture = 2045;
-let age = yearFuture - yearOfBirth;
+const age = yearFuture - yearOfBirth;
 console.log(`You will be ${age} years old in ${yearFuture}.`);
 
 // Goodboy-Oldboy (A dog age calculator)
 let dogYearOfBirth = 2017;
 let dogYearFuture = 2027;
-let shouldShowResultInDogYears = true;
-let dogYear;
-if ((shouldShowResultInDogYears === true)) {
-  dogYear = (dogYearFuture - dogYearOfBirth) * 7 + " dog";
-  console.log("Your dog will be " + dogYear + " years old in 2027.");
+let dogYear = dogYearFuture - dogYearOfBirth;
+let shouldShowResultInDogYears = false;
+if (shouldShowResultInDogYears === true) {
+  dogYear *= 7;
+  console.log(`Your dog will be ${dogYear} dog years old in 2027.`); // Log out result in dog years
 } else {
-  dogYear = (dogYearFuture - dogYearOfBirth) * 1 + " human";
-  console.log("Your dog will be " + dogYear + " years old in 2027.");
+  dogYear *= 1;
+  console.log(`Your dog will be ${dogYear} human years old in 2027.`); // Log out result in human years
 }
-
 
 // Housey pricey (A house price estimator)
 // Peter's house
