@@ -87,11 +87,5 @@ const secondWords = [
 ];
 const randomNumberFirst = Math.floor(Math.random() * 10);
 const randomNumberSecond = Math.floor(Math.random() * 10);
-let startupName = firstWords[randomNumberFirst] + " " + secondWords[randomNumberSecond];
-console.log(
-  'The startup: "' +
-    startupName +
-    '" contains ' +
-    startupName.length +
-    " characters."
-);
+const startupName = firstWords[randomNumberFirst] + " " + secondWords[randomNumberSecond];
+console.log(`The startup: ${startupName} contains ${startupName.length} characters.`);
