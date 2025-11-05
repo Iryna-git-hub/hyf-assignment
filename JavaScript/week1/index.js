@@ -18,29 +18,47 @@ if (shouldShowResultInDogYears === true) {
 }
 
 // Housey pricey (A house price estimator)
+
+// Constructor function for HouseSize objects
+function HouseSize(wide, deep, height, garden, cost) {
+  this.wide = wide;
+  this.deep = deep;
+  this.hight = height;
+  this.gardenSizeInM2 = garden;
+  this.houseCost = cost;
+  // House area formula
+  this.volumeInMeters = wide * deep * height;
+
+  // House price formula
+  this.housePrice = this.volumeInMeters * 2.5 * 1000 + garden * 300;
+
+  // Calculating the difference in cost
+  this.diffCost = cost - this.housePrice;
+}
+
 // Peter's house
-let widePeter = 8;
-let deepPeter = 10;
-let heightPeter = 10;
-let gardenSizeInM2Peter = 100;
-let volumeInMetersPeter = widePeter * deepPeter * heightPeter;
-let housePricePeter =
-  volumeInMetersPeter * 2.5 * 1000 + gardenSizeInM2Peter * 300;
-let sellingPricePeter = 2500000 - housePricePeter;
-console.log("Peter's house costs " + sellingPricePeter + " too much.");
+// Create Peter object
+const peterHouse = new HouseSize(8, 10, 10, 100, 2500000);
+
+if (peterHouse.diffCost > 0) {
+    console.log(`Peter's house costs ${peterHouse.diffCost} too much.`);
+} else if (peterHouse.diffCost === 0) {
+    console.log(`Peter's house has a fair price.`);
+} else {
+    console.log(`Peter's house costs ${Math.abs(peterHouse.diffCost)} too little.`);
+};
+
 
 // Julia's house
-let wideJulia = 5;
-let deepJulia = 11;
-let heightJulia = 8;
-let gardenSizeInM2Julia = 70;
-let volumeInMetersJulia = wideJulia * deepJulia * heightJulia;
-let housePriceJulia =
-  volumeInMetersJulia * 2.5 * 1000 + gardenSizeInM2Julia * 300;
-let sellingPriceJulia = 1000000 - housePriceJulia;
-console.log(
-  "Julia's house costs " + Math.abs(sellingPriceJulia) + " too little."
-);
+// Create Julia object
+const juliaHouse = new HouseSize(5, 11, 8, 70, 1000000);
+if (juliaHouse.diffCost > 0) {
+    console.log(`Julia's house costs ${juliaHouse.diffCost} too much.`);
+} else if (juliaHouse.diffCost === 0) {
+    console.log(`Julia's house has a fair price.`);
+} else {
+    console.log(`Julia's house costs ${Math.abs(juliaHouse.diffCost)} too little.`);
+};
 
 // Ez Namey (Startup name generator) Optional
 const firstWords = [
