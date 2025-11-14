@@ -12,11 +12,9 @@ function getEventWeekday(num) {
 
   // Get the current date from the system
   const today = new Date();
-  const dayIndex = today.getDay();
 
   // Defining the event day
-  const eventInDays = num % 7;
-  const eventDay = weekDays[(today.getDay() + eventInDays) % 7];
+  const eventDay = weekDays[(today.getDay() + num) % 7];
   console.log(eventDay);
 }
 
