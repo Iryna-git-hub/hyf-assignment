@@ -24,7 +24,8 @@ function weatherWear(temperature) {
   } else 
     {weatherReadyClothes = "Stay at home!";}
 
-  console.log(weatherReadyClothes);
+return weatherReadyClothes;  
 }
 
 const clothesToWear = weatherWear(18);
+console.log(clothesToWear);
