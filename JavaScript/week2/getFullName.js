@@ -1,9 +1,11 @@
 // Takes first name and surname and return fullname
-function getFullName(firstName, lastName, useFormalName) {
+function getFullName(firstName, lastName, useFormalName = false) {
   let fullName;
-  if (useFormalName === true) {
+  if (useFormalName) {
     let formalName = "Lord";
     fullName = `${formalName} ${firstName} ${lastName}`;
+  } else if (firstName === undefined || lastName === undefined) {
+    fullName = "Please enter your first and last name.";
   } else {
     fullName = `${firstName} ${lastName}`;
   }
@@ -17,6 +19,9 @@ console.log(fullName1);
 
 const fullName2 = getFullName("Mark", "Twain", false);
 console.log(fullName2);
+
+const fullName3 = getFullName();
+console.log(fullName3);
 
 // Formal fullname
 /*
