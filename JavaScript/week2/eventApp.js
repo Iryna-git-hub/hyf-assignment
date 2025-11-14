@@ -16,6 +16,7 @@ function getEventWeekday(num) {
   // Defining the event day
   const eventDay = weekDays[(today.getDay() + num) % 7];
   console.log(eventDay);
+  return eventDay;
 }
 
 getEventWeekday(10);
