@@ -1,7 +1,7 @@
 const class07Students = ["Mark", "Elsa", "Meryem", "Ole", "Martin"];
 function addStudentToClass(studentName) {
   // Check if the new student name is an empty string
-  if (studentName === "") {
+  if (studentName === undefined) {
     console.log("Enter a student's name");
     return 0;
   }
@@ -15,11 +15,10 @@ function addStudentToClass(studentName) {
 
     if (class07Students.includes(studentName)) {
       console.log(`Student ${studentName} is already in the class`);
-      console.log(class07Students);
       return 0;
     } else {
       class07Students.push(studentName);
-      console.log(class07Students);
+      
     }
   } else {
     console.log("Cannot add more students to class 07");
@@ -28,6 +27,7 @@ function addStudentToClass(studentName) {
 }
 
 addStudentToClass();
+console.log(class07Students);
 
 function getNumberOfStudents(class07Students) {
   console.log(class07Students.length);
