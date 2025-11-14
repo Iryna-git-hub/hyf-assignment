@@ -1,5 +1,5 @@
 // Based on the temperature the "Weather wear" returns a string with what the user should wear
-function weatherWear(temperature) {
+function getWeatherWear(temperature) {
     // Initializing weather-appropriate clothing array
   const clothes = [
     "Warm coat, sweater, jeans, gloves, boots",
@@ -10,22 +10,22 @@ function weatherWear(temperature) {
   ];
 
   // 
-  let weatherReadyClothes;
+  let weatherWear;
   if (temperature > -10 && temperature < 0) {
-    weatherReadyClothes = clothes[0];
+    weatherWear = clothes[0];
   } else if (temperature >= 0 && temperature < 10) {
-    weatherReadyClothes = clothes[1];
+    weatherWear = clothes[1];
   } else if (temperature >= 10 && temperature < 15) {
-    weatherReadyClothes = clothes[2];
+    weatherWear = clothes[2];
   } else if (temperature >= 15 && temperature < 20) {
-    weatherReadyClothes = clothes[3];
+    weatherWear = clothes[3];
   } else if (temperature >= 20 && temperature < 30) {
-    weatherReadyClothes = clothes[4];
+    weatherWear = clothes[4];
   } else 
-    {weatherReadyClothes = "Stay at home!";}
+    {weatherWear = "Stay at home!";}
 
-return weatherReadyClothes;  
+return weatherWear;  
 }
 
-const clothesToWear = weatherWear(18);
+const clothesToWear = getWeatherWear(18);
 console.log(clothesToWear);
