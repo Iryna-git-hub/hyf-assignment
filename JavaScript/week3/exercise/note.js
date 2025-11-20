@@ -55,3 +55,5 @@ logOutNotesFormatted();
 // }
 
 // removeNoteById(3);
+
+// I tried to implement the function, but it removes the note by id for first function us well. 
