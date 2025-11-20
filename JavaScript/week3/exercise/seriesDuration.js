@@ -34,7 +34,7 @@ function getTimeOfLifeWithSeries() {
     const secondSeriesPercent = Number((secondSeriesDuration * 100 / lifeTime).toFixed(3));
     const thirdSeriesPercent = Number((thirdSeriesDuration * 100 / lifeTime).toFixed(3));
 
-    // Declare log outputs
+    // Declare log out statement for series
     const firstSeriesLog =`${seriesDurations[0].title} took ${firstSeriesPercent}\% of my life`;
     const secondSeriesLog =`${seriesDurations[1].title} took ${secondSeriesPercent}\% of my life`;
     const thirdSeriesLog =`${seriesDurations[2].title} took ${thirdSeriesPercent}\% of my life`;
@@ -48,3 +48,5 @@ function getTimeOfLifeWithSeries() {
 }
 
 getTimeOfLifeWithSeries(); 
+
+// I think there is a way to optimize the code to avoid duplication. I'll explore it later.
