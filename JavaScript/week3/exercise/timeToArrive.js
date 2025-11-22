@@ -4,9 +4,7 @@ const travelInformation = {
   destinationDistance: 432,
 };
 
-const travelTime = timeToArrive(travelInformation);
-
-function timeToArrive() {
+function timeToArrive(travelInformation) {
   const time = travelInformation.destinationDistance / travelInformation.speed;
   // Get integer hours
   const intHours = Math.trunc(time);
@@ -17,4 +15,5 @@ function timeToArrive() {
   return `${intHours} fours and ${intMinutes} minutes`;
 }
 
-console.log(travelTime); // 8 hours and 38 minutes
+const travelTime = timeToArrive(travelInformation);
+console.log(travelTime);
