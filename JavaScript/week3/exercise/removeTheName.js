@@ -11,7 +11,6 @@ const names = [
 ];
 const nameToRemove = "Ahmad";
 
-// Write some code here
 function removeTheName() {
   // Define the index of the variable to remove
   const i = names.indexOf(nameToRemove);
@@ -20,7 +19,7 @@ function removeTheName() {
     // Removes 1 element starting at index i
     names.splice(i, 1);
 }
-// Code done
+
 removeTheName(nameToRemove);
 
-console.log(names); // ['Peter', 'Yana', 'kristina', 'Rasmus', 'Samuel', 'Katrine', 'Tala']
+console.log(names);
