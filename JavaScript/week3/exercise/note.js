@@ -14,16 +14,30 @@ console.log(notes);
 
 // Get a note
 function getNote(id) {
+  // Validate id input
+  if (!id) {
+    console.log(`Error: id input is needed.`);
+    return;
+  }
+
+  if (typeof id !== "number") {
+    console.log(`Error: id must be a number.`);
+    return;
+  }
+
+  // Search for the note
   for (let i = 0; i < notes.length; i++) {
-    if (id === undefined || typeof id !== "number") {
-      console.log(`Error: id input is needed.`);
-    } else if (notes[i].id === id) {
+    if (notes[i].id === id) {
       return notes[i];
     }
   }
+
+  // If the id is not found
+  console.log(`Note with id ${id} not found`);
+  return;
 }
 
-const firstNote = getNote(2);
+const firstNote = getNote(3);
 console.log(firstNote);
 
 // Log out notes
@@ -38,22 +52,23 @@ function logOutNotesFormatted() {
 logOutNotesFormatted();
 
 // Unique feature - Remove note by id
-// function removeNoteById(id) {
-//   for (let i = 0; i < notes.length; i++) {
-//     if (id === undefined || typeof id !== "number") {
-//       console.log(`Error: id input is needed.`); 
-//       return;
-//     }
+function removeNoteById(id) {
+  const notesRemove = structuredClone(notes);
 
-//     if (notes[i].id === id) {
-//       notes.splice(i, 1);
-//       console.log("Note removed");
-//       console.log(notes);
-//       return;
-//   }
-// }
-// }
+  if (!id || typeof id !== "number") {
+    console.log(`Error: id input is needed.`);
+    return;
+  }
 
-// removeNoteById(3);
+  for (let i = 0; i < notesRemove.length; i++) {
+    if (notesRemove[i].id === id) {
+      notesRemove.splice(i, 1);
+      console.log(`Note ${notesRemove.content} removed`);
+      console.log(notesRemove);
+      return notesRemove;
+    }
+  }
+  console.log(`Note with id ${id} not found.`);
+}
 
-// I tried to implement the function, but it removes the note by id for first function us well. 
+removeNoteById(1);
