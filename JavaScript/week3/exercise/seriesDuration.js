@@ -36,11 +36,11 @@ function getSeriesDurationInPercent(seriesDurations) {
     seriesDurationInPercent = Number(
       ((seriesDurationInHours * 100) / lifeTime).toFixed(3)
     );
+    seriesDurationInPercent += seriesDurationInPercent;
 
     // Declare log out statement for series
     const seriesDurationLog = `${seriesDurations[i].title} took ${seriesDurationInPercent}\% of my life`;
     console.log(seriesDurationLog);
-    seriesDurationInPercent += seriesDurationInPercent;
   }
 
   const totalSeriesDuration = `In total that is ${seriesDurationInPercent} of my life`;

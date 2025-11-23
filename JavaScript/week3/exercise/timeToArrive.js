@@ -12,7 +12,7 @@ function timeToArrive(travelInformation) {
   const fraction = time - intHours;
   const intMinutes = Math.trunc(fraction * 60);
 
-  return `${intHours} fours and ${intMinutes} minutes`;
+  return `${intHours} hours and ${intMinutes} minutes`;
 }
 
 const travelTime = timeToArrive(travelInformation);
