@@ -11,12 +11,9 @@ const names = [
 ];
 const nameToRemove = "Ahmad";
 
-function removeTheName() {
-  // Define the index of the variable to remove
-  const i = names.indexOf(nameToRemove);
-  // Check if indexOf found the variable
+function removeTheName(name) {
+  const i = names.indexOf(name);
   if (i !== -1)
-    // Removes 1 element starting at index i
     names.splice(i, 1);
 }
 
