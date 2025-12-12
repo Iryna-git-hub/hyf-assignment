@@ -1,24 +1,59 @@
 const artyom = new Artyom();
 
-let userName = "";
-const todos = [];
+const user = { name: "", todos: [] };
+
+function getReply(command) {
+  const lower = command.toLowerCase();
+
+  switch (true) {
+    case lower.includes("hello my name is"):
+      return greeting(lower);
+
+    case lower.includes("what is my name"):
+      return checkName();
+
+    case lower.includes("add") && lower.includes("to my todo"):
+      return addTodo(lower);
+
+    case lower.includes("remove") && lower.includes("from my todo"):
+      return removeTodo(lower);
+
+    case lower.includes("what is on my todo"):
+      return handleTodoList();
+
+    case lower.includes("what day is it today"):
+      return checkDate();
+
+    case lower.includes("what is") && /[+\-*/]/.test(lower):
+      return doMath(lower);
+
+    case lower.includes("set a timer for"):
+      return setTimer(lower);
+
+    case lower.includes("tell me a joke"):
+      return "Why do programmers prefer dark mode? Because light attracts bugs.";
+
+    default:
+      return "I did not understand that command";
+  }
+}
 
 function greeting(text) {
   const parts = text.split("hello my name is");
   const name = parts[1].trim();
 
-  if (name === userName) {
-    return `I already know that your name is ${userName}.`;
+  if (name === user.name) {
+    return `I already know that your name is ${user.name}.`;
   }
-  userName = name;
-  return `Nice to meet you ${userName}`;
+  user.name = name;
+  return `Nice to meet you ${user.name}`;
 }
 
 function checkName() {
-  if (userName === "") {
+  if (user.name === "") {
     return "I don't know your name yet.";
   }
-  return `Your name is ${userName}`;
+  return `Your name is ${user.name}`;
 }
 
 function addTodo(text) {
@@ -26,7 +61,7 @@ function addTodo(text) {
   const secondPart = firstPart[1].split("to my todo");
   const task = secondPart[0].trim();
 
-  todos.push(task);
+  user.todos.push(task);
   return `${task} added to your todo`;
 }
 
@@ -35,19 +70,21 @@ function removeTodo(text) {
   const secondPart = firstPart[1].split("from my todo");
   const task = secondPart[0].trim();
 
-  const index = todos.indexOf(task);
+  const index = user.todos.indexOf(task);
   if (index > -1) {
-    todos.splice(index, 1);
+    user.todos.splice(index, 1);
     return `Removed ${task} from your todo`;
   }
   return `${task} is not in your todo list`;
 }
 
 function handleTodoList() {
-  if (todos.length === 0) {
-    return "You have 0 todos.";
+  if (user.todos.length === 0) {
+    return "You have 0 user.todos.";
   }
-  return `You have ${todos.length} todos - ${todos.join(" and ")}`;
+  return `You have ${user.todos.length} user.todos - ${user.todos.join(
+    " and "
+  )}`;
 }
 
 function checkDate() {
@@ -113,42 +150,6 @@ function setTimer(text) {
     return `Timer set for ${minutes} minutes`;
   }
   return "I couldn't understand the time amount.";
-}
-
-function getReply(command) {
-  const lower = command.toLowerCase();
-
-  switch (true) {
-    case lower.includes("hello my name is"):
-      return greeting(lower);
-
-    case lower.includes("what is my name"):
-      return checkName();
-
-    case lower.includes("add") && lower.includes("to my to-do"):
-      return addTodo(lower);
-
-    case lower.includes("remove") && lower.includes("from my to-do"):
-      return removeTodo(lower);
-
-    case lower.includes("what is on my to-do"):
-      return handleTodoList();
-
-    case lower.includes("what day is it today"):
-      return checkDate();
-
-    case lower.includes("what is") && /[+\-*/]/.test(lower):
-      return doMath(lower);
-
-    case lower.includes("set a timer for"):
-      return setTimer(lower);
-
-    case lower.includes("tell me a joke"):
-      return "Why do programmers prefer dark mode? Because light attracts bugs.";
-
-    default:
-      return "I did not understand that command";
-  }
 }
 
 function isgetReplyAvailable() {
