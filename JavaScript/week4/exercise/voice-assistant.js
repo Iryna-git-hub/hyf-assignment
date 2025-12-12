@@ -50,7 +50,7 @@ function greeting(text) {
 }
 
 function checkName() {
-  if (user.name === "") {
+  if (!user.name) {
     return "I don't know your name yet.";
   }
   return `Your name is ${user.name}`;
