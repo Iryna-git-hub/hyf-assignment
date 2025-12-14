@@ -3,6 +3,7 @@ const artyom = new Artyom();
 const user = { name: "", todos: [] };
 
 function getReply(command) {
+  if (!command && !command.trim()) return "Empty command is not a command" 
   const lower = command.toLowerCase();
 
   switch (true) {
