@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hogwarts House Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 600px;
+        margin: auto;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 12px;
+        border-radius: 6px;
+        color: white;
+      }
+      .wrap {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      input {
+        padding: 8px;
+        flex: 1;
+      }
+      button {
+        padding: 8px 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hogwarts House Generator</h1>
+
+    <!-- 2.1 Markup time -->
+    <label>
+      Your name:
+      <input id="nameInput" placeholder="Write your name here" />
+    </label>
+
+    <div class="wrap">
+      <button id="assignBtn">Get my house</button>
+      <button id="tryAgainBtn" disabled>Try again</button>
+    </div>
+
+    <div id="resultArea"></div>
+
+    <script>
+      const houses = [
+        {
+          name: "Gryffindor",
+          color: "#7f0909",
+        },
+        {
+          name: "Hufflepuff",
+          color: "#ecb939",
+        },
+        {
+          name: "Ravenclaw",
+          color: "#0e1a40",
+        },
+        {
+          name: "Slytherin",
+          color: "#0d6217",
+        },
+      ];
+
+      const nameInput = document.getElementById("nameInput");
+      const assignBtn = document.getElementById("assignBtn");
+      const tryAgainBtn = document.getElementById("tryAgainBtn");
+      const resultArea = document.getElementById("resultArea");
+
+      let lastHouseIndex = null;
+
+      function randomIndex(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      // 2.3 Choosing a house
+      function pickHouseIndex(excludeIndex = null) {
+        if (houses.length === 0) return null;
+        if (excludeIndex === null) return randomIndex(houses.length);
+
+        let idx = randomIndex(houses.length);
+        while (idx === excludeIndex) {
+          idx = randomIndex(houses.length);
+        }
+        return idx;
+      }
+
+      function showResult(name, houseIndex) {
+        const house = houses[houseIndex];
+        resultArea.innerHTML = "";
+        const wrapper = document.createElement("div");
+        wrapper.className = "result";
+        wrapper.style.background = house.color;
+        wrapper.innerHTML = `${name} belongs in ${house.name}`;
+        resultArea.appendChild(wrapper);
+
+        tryAgainBtn.disabled = false;
+      }
+
+      // 2.2 Event: when user clicks assign
+      assignBtn.addEventListener("click", function () {
+        const name = nameInput.value.trim();
+
+        // 2.5 No input
+        if (!name) {
+          resultArea.innerHTML = `<div style="color:#b22222; padding:10px;">Please enter your name before getting a house.</div>`;
+          tryAgainBtn.disabled = true;
+          return;
+        }
+
+        const idx = pickHouseIndex();
+        lastHouseIndex = idx;
+        showResult(name, idx);
+      });
+
+      // 2.4 Trying again
+      tryAgainBtn.addEventListener("click", function () {
+        if (lastHouseIndex === null) return;
+        const name = nameInput.value.trim() || "You";
+        const idx = pickHouseIndex(lastHouseIndex);
+        lastHouseIndex = idx;
+        showResult(name, idx);
+      });
+
+      // New feature: allow pressing Enter in the input to get house
+      nameInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") assignBtn.click();
+      });
+    </script>
+  </body>
+</html>
