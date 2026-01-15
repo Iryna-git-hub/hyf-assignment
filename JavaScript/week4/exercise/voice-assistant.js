@@ -3,7 +3,7 @@ const artyom = new Artyom();
 const user = { name: "", todos: [] };
 
 function getReply(command) {
-  if (!command && !command.trim()) return "Empty command is not a command" 
+  if (typeof command !== "string" || !command.trim()) return "Empty command is not a command";
   const lower = command.toLowerCase();
 
   switch (true) {
@@ -58,18 +58,14 @@ function checkName() {
 }
 
 function addTodo(text) {
-  const firstPart = text.split("add");
-  const secondPart = firstPart[1].split("to my todo");
-  const task = secondPart[0].trim();
+  const task = text.replace("add ", "").replace(" to my todo", "").trim();
 
   user.todos.push(task);
   return `${task} added to your todo`;
 }
 
 function removeTodo(text) {
-  const firstPart = text.split("remove");
-  const secondPart = firstPart[1].split("from my todo");
-  const task = secondPart[0].trim();
+  const task = text.replace("add ", "").replace(" to my todo", "").trim();
 
   const index = user.todos.indexOf(task);
   if (index > -1) {
@@ -89,26 +85,11 @@ function handleTodoList() {
 }
 
 function checkDate() {
-  const date = new Date();
-  const day = date.getDate();
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const monthName = months[date.getMonth()];
-  const year = date.getFullYear();
-
-  return `${day}. of ${monthName} ${year}`;
+  return new Date().toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 }
 
 function doMath(text) {
