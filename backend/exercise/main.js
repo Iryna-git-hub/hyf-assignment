@@ -48,8 +48,14 @@ app.get("/pets", (req, res) => {
 
 // Get list of all users from the table
 app.get("/list-of-users", async (req, res) => {
-  const usersList = await knexInstance.raw("SELECT * FROM users;");
-  res.json(usersList);
+  try {
+    const usersList= await knex("user").select("id");
+    if (!usersList|| !usersList.length) return res.status(404).json({ error: "No users found" });
+    res.json(usersList);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 // Get list of the users sorted by creation date
