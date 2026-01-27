@@ -65,7 +65,7 @@ function addTodo(text) {
 }
 
 function removeTodo(text) {
-  const task = text.replace("add ", "").replace(" to my todo", "").trim();
+  const task = text.replace("remove ", "").replace(" from my todo", "").trim();
 
   const index = user.todos.indexOf(task);
   if (index > -1) {
