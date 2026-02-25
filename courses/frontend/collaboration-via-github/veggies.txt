@@ -1,5 +1,7 @@
 carrot
 broccoli
-spinach
+tomato
 pepper
 cucumber
+eggplant
+zucchini
