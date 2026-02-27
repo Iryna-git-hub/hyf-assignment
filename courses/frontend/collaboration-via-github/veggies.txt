@@ -1,6 +1,7 @@
 carrot
 broccoli
 tomato
+radish
 pepper
 cucumber
 eggplant
