@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image inserter</title>
+  </head>
+  <body>
+    <h1>Image inserter</h1>
+    <div id="wrap">
+      <button id="addImg">Get picture</button>
+    </div>
+    <script>
+      function insertImg(imageUrl, elementToAppendImageTo) {
+        const img = document.createElement("img");
+        img.src = imageUrl;
+        img.alt = img.name;
+        elementToAppendImageTo.appendChild(img);
+      }
+
+      document.getElementById("addImg").addEventListener("click", function () {
+        insertImg("https://picsum.photos/536/354", document.body);
+      });
+    </script>
+  </body>
+</html>

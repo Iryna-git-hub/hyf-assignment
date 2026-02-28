@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple event listener</title>
+  </head>
+  <body>
+    <h1>Simple event listener</h1>
+    <button id="btn">Click</button>
+    <script>
+      document.getElementById("btn").addEventListener("click", function () {
+        const text = this.textContent.trim();
+        this.textContent = text === "Click" ? "Button clicked" : "Click";
+      });
+    </script>
+  </body>
+</html>

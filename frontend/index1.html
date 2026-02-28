@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Podcast</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Podcast</h1>
+    <ul></ul>
+    <script>
+      const podcasts = [
+        {
+          name: "The mystery om of Johan Klausen Varbourg",
+          imageUrl: "https://picsum.photos/536/354",
+        },
+        {
+          name: "Tips about dogs with small legs",
+          imageUrl: "https://picsum.photos/536/355",
+        },
+        {
+          name: "You, me, we and us",
+          imageUrl: "https://picsum.photos/536/356",
+        },
+        {
+          name: "Breakfast news - Dinner edition",
+        },
+      ];
+
+      const ul = document.querySelector("ul");
+
+      for (let i = 0; i < podcasts.length; i++) {
+        const p = podcasts[i];
+        const li = document.createElement("li");
+
+        const h2 = document.createElement("h2");
+
+        h2.textContent = p.name;
+
+        li.appendChild(h2);
+        if (p.imageUrl) {
+          const img = document.createElement("img");
+          img.src = p.imageUrl;
+          li.appendChild(img);
+        }
+
+        ul.appendChild(li);
+      }
+    </script>
+  </body>
+</html>
