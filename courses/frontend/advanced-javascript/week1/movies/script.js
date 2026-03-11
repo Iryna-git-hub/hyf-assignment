@@ -4,6 +4,9 @@ console.log(movies);
 
 const shortTitles = movies.filter(movie => movie.title.length <= 10);
 
+const longTitles = movies.map(movie => movie.title)
+.filter(title => title.length > 20);
+
 
 
 function renderList(id,title,data){
@@ -23,4 +26,10 @@ renderList(
 "shortTitles",
 "Short Titles",
 shortTitles.map(m=>m.title)
+);
+
+renderList(
+"longTitles",
+"Long Titles",
+longTitles
 );
