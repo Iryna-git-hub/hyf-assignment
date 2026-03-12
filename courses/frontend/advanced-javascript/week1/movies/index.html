@@ -10,16 +10,38 @@
     <h1>Movies sorting</h1>
 
     <div class="container">
-      <section id="shortTitles"></section>
-      <section id="longTitles"></section>
-      <section id="movies80s"></section>
-      <section id="taggedMovies"></section>
-      <section id="ratingsOver6"></section>
-      <section id="keywordCount"></section>
-      <section id="duplicatedTitles"></section>
-      <section id="averageRating"></section>
-      <section id="ratingSummary"></section>
-    </div>
+    <div class="filters">
+        <button id="shortBtn">Short titles</button>
+        <button id="longBtn">Long titles</button>
+        <button id="movies80sBtn">Movies from 80s</button>
+        <button id="ratingBtn">Rating > 6</button>
+        <div class="checkboxFilter">
+
+        <label>
+            <input type="checkbox" value="surfer"> Surfer
+        </label>
+
+        <label>
+            <input type="checkbox" value="alien"> Alien
+        </label>
+
+        <label>
+            <input type="checkbox" value="benjamin"> Benjamin
+        </label>
+
+        <button id="keywordBtn">Filter keywords</button>
+
+        </div>
+
+</div>
+
+<div id="stats"></div>
+
+<div id="moviesList" class="movies"></div>
+
+<button id="showMore" class="show-more-btn">Show more movies</button>
+
+<script type="module" src="script.js"></script>
     <script type="module" src="script.js"></script>
   </body>
 </html>

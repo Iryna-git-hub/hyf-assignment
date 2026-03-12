@@ -2,44 +2,69 @@ import { movies } from "./movies.js";
 
 console.log(movies);
 
-const shortTitles = movies.filter(movie => movie.title.length <= 10);
+let visibleMovies = 15;
+let currentMovies = [...movies];
 
-const longTitles = movies.map(movie => movie.title)
-.filter(title => title.length > 20);
+const moviesContainer = document.getElementById("moviesList");
 
-const movies80s = movies.filter(movie =>
-movie.year >= 1980 && movie.year <= 1989
-);
+function renderMovies(list) {
+  moviesContainer.innerHTML = "";
 
+  list.slice(0, visibleMovies).forEach((movie) => {
+    const card = document.createElement("div");
+    card.className = "movie-card";
 
-
-function renderList(id,title,data){
-
-const section = document.getElementById(id);
-
-section.innerHTML = `
-<h2>${title}</h2>
-<ul>
-${data.map(item=>`<li>${item}</li>`).join("")}
-</ul>
+    card.innerHTML = `
+<div class="movie-title">${movie.title}</div>
+<div>Year: ${movie.year}</div>
+<div>Rating: ${movie.rating}</div>
 `;
 
+    moviesContainer.appendChild(card);
+  });
 }
 
-renderList(
-"shortTitles",
-"Short Titles",
-shortTitles.map(m=>m.title)
-);
+renderMovies(currentMovies);
 
-renderList(
-"longTitles",
-"Long Titles",
-longTitles
-);
+document.getElementById("showMore").addEventListener("click", () => {
+  visibleMovies += 15;
+  renderMovies(currentMovies);
+});
 
-renderList(
-"movies80s",
-"Movies from 1980s",
-movies80s.map(m=>m.title)
-);
+document.getElementById("shortBtn").onclick = () => {
+  currentMovies = movies.filter((m) => m.title.length <= 10);
+
+  renderMovies(currentMovies);
+};
+
+document.getElementById("longBtn").onclick = () => {
+  currentMovies = movies.filter((m) => m.title.length > 20);
+
+  renderMovies(currentMovies);
+};
+
+document.getElementById("movies80sBtn").onclick = () => {
+  currentMovies = movies.filter((m) => m.year >= 1980 && m.year <= 1989);
+
+  renderMovies(currentMovies);
+};
+
+document.getElementById("ratingBtn").onclick = () => {
+  currentMovies = movies.filter((m) => m.rating > 6);
+
+  renderMovies(currentMovies);
+};
+
+document.getElementById("keywordBtn").onclick = () => {
+  const checked = [
+    ...document.querySelectorAll("input[type=checkbox]:checked"),
+  ].map((el) => el.value.toLowerCase());
+
+  currentMovies = movies.filter((movie) => {
+    const title = movie.title.toLowerCase();
+
+    return checked.some((word) => title.includes(word));
+  });
+
+  renderMovies(currentMovies);
+};
