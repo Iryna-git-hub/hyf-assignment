@@ -165,4 +165,3 @@ let object = { multiply : (x, y) => {
 
 object.multiply(5, 2)
 
-// 4 ...loading
