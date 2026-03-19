@@ -142,7 +142,7 @@ const toSplit = (sentence) => {
 };
 
 const newArr = [toUpper, toLower, toSplit];
-newArr.forEach((callback) => callback("HELLO WorlD"));
+newArr.forEach((callback) => callback("hElLO WorlD"));
 
 // 2
 
@@ -150,12 +150,12 @@ const foo = function () {
   console.log(5);
 };
 
-function foofoo() {
+function baz() {
   console.log(7);
 }
 
 foo();
-foofoo();
+baz();
 
 // 3
 
