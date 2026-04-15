@@ -7,30 +7,30 @@ export const OurPartners = () => {
         We collaborate with some of the most respected names in the space and
         technology industries to make every journey extraordinary.
       </p>
-      <ul>
-        <li>
-          <img src="../../public/business_partners/CBC_Logo_White.png" alt="" />
+      <ul className={styles.partnersList}>
+        <li className={styles.partnersListItem}>
+          <img src="../../public/business_partners/CBC_Logo_White.png" alt="CBC logo" />
         </li>
-        <li>
-          <img src="../../public/business_partners/CBC_Logo_White.png" alt="" />
+        <li className={styles.partnersListItem}>
+          <img src="../../public/business_partners/Microsoft-Logo-white.png" alt="Microsoft logo" />
         </li>
-        <li>
-          <img src="../../public/business_partners/CBC_Logo_White.png" alt="" />
+        <li className={styles.partnersListItem}>
+          <img src="../../public/business_partners/QueensLogo_white.png" alt="Queens logo" />
         </li>
-        <li>
-          <img src="../../public/business_partners/CBC_Logo_White.png" alt="" />
+        <li className={styles.partnersListItem}>
+          <img src="../../public/business_partners/alphabet-logo.png" alt="Alphabet logo" />
         </li>
-        <li>
-          <img src="../../public/business_partners/CBC_Logo_White.png" alt="" />
+        <li className={styles.partnersListItem}>
+          <img src="../../public/business_partners/amazon_logo.png" alt="Amazon logo" />
         </li>
-        <li>
-          <img src="../../public/business_partners/CBC_Logo_White.png" alt="" />
+        <li className={styles.partnersListItem}>
+          <img src="../../public/business_partners/nyu-logo.png" alt="NYU logo" />
         </li>
-        <li>
-          <img src="../../public/business_partners/CBC_Logo_White.png" alt="" />
+        <li className={styles.partnersListItem}>
+          <img src="../../public/business_partners/samsung-logo.png" alt="Samsung logo" />
         </li>
-        <li>
-          <img src="../../public/business_partners/CBC_Logo_White.png" alt="" />
+        <li className={styles.partnersListItem}>
+          <img src="../../public/business_partners/sodexo-logo.png" alt="Sodexo logo" />
         </li>
       </ul>
     </>

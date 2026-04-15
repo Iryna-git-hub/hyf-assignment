@@ -3,9 +3,9 @@ import styles from "./OurValues.module.css";
 export const OurValues = () => {
   return (
     <>
-      <ul>
+      <ul className={styles.valuesList}>
         <li>
-          <span className="valueNumber">01</span>
+          <span className={styles.valueNumber}>01</span>
           <h3>Exploration</h3>
           <p>
             We are driven by a deep-seated desire to explore the unknown. We
@@ -15,7 +15,7 @@ export const OurValues = () => {
           </p>
         </li>
         <li>
-          <span className="valueNumber">02</span>
+          <span className={styles.valueNumber}>02</span>
           <h3>Innovation</h3>
           <p>
             At Galactica, we prioritize cutting-edge technology and innovation.
@@ -25,7 +25,7 @@ export const OurValues = () => {
           </p>
         </li>
         <li>
-          <span className="valueNumber">03</span>
+          <span className={styles.valueNumber}>03</span>
           <h3>Sustainability</h3>
           <p>
             We are committed to making space exploration sustainable for future
@@ -35,7 +35,7 @@ export const OurValues = () => {
           </p>
         </li>
         <li>
-          <span className="valueNumber">04</span>
+          <span className={styles.valueNumber}>04</span>
           <h3>Community</h3>
           <p>
             We believe in the power of collective exploration. Our journeys are

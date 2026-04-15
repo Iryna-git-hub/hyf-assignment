@@ -8,8 +8,8 @@ export const OurCrew = () => {
         seasoned space explorers, engineers, and visionaries who are united by a
         common goal: to make space travel accessible and exciting for all.
       </p>
-      <ul>
-        <li>
+      <ul className={styles.crewList}>
+        <li className={styles.crewItem}>
           <article>
             <img
               src="../../public/crew/image-anousheh-ansari.png"
@@ -26,7 +26,7 @@ export const OurCrew = () => {
             </p>
           </article>
         </li>
-        <li>
+        <li className={styles.crewItem}>
           <article>
             <img
               src="../../public/crew/image-douglas-hurley.png"
@@ -43,7 +43,7 @@ export const OurCrew = () => {
             </p>
           </article>
         </li>
-        <li>
+        <li className={styles.crewItem}>
           <article>
             <img
               src="../../public/crew/image-victor-glover.png"
@@ -61,7 +61,7 @@ export const OurCrew = () => {
             </p>
           </article>
         </li>
-        <li>
+        <li className={styles.crewItem}>
           <article>
             <img
               src="../../public/crew/image-mark-shuttleworth.png"
@@ -79,7 +79,7 @@ export const OurCrew = () => {
             </p>
           </article>
         </li>
-        <li>
+        <li className={styles.crewItem}>
           <article>
             <img
               src="../../public/crew/image-anousheh-ansari.png"
