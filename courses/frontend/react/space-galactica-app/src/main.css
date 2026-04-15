@@ -139,7 +139,7 @@ button {
 
 .card {
   position: relative;
-  padding: var(--spacing-12);
+  padding: var(--spacing-32);
   margin: var(--spacing-16);
 }
 
