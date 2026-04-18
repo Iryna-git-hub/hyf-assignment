@@ -1,0 +1,2 @@
+const RAPID_API_KEY = "9ecddfb64fmsh17aa6c8fd3b0463p1fd84bjsn91f5ce6515f9";
+const CRUDCRUD_ID = "886bd3b061814368a77438bc9c163386";
