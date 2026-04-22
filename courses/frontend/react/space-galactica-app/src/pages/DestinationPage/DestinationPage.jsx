@@ -11,7 +11,11 @@ export const Destinations = () => {
   };
 
   const togglePlanetSelection = (name, thumbnail) => {
-   
+    if(isPlanetInWishlist(name)) {
+      removePlanetFromWishlist(name);
+    } else {
+      addPlanetToWishlist(name, thumbnail);
+    }
   };
 
   const addPlanetToWishlist = (name, thumbnail) => {
