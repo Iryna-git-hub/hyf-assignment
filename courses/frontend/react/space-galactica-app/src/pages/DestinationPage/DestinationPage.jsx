@@ -2,7 +2,6 @@ import { useState } from "react";
 import styles from "./DestinationPage.module.css";
 import { PlanetsWishlistItem } from "./PlanetsWishlistItem";
 
-
 export const Destinations = () => {
   const [planetsWishlist, setPlanetsWishlist] = useState([]);
 
@@ -11,7 +10,7 @@ export const Destinations = () => {
   };
 
   const togglePlanetSelection = (name, thumbnail) => {
-    if(isPlanetInWishlist(name)) {
+    if (isPlanetInWishlist(name)) {
       removePlanetFromWishlist(name);
     } else {
       addPlanetToWishlist(name, thumbnail);
@@ -19,8 +18,13 @@ export const Destinations = () => {
   };
 
   const addPlanetToWishlist = (name, thumbnail) => {
-    // 🧑🏽‍🚀 Task - Week 2
-    // Add the planet to the planets wishlist state.
+    setPlanetsWishlist((currentWishlist) => [
+      ...currentWishlist,
+      {
+        name,
+        thumbnail,
+      },
+    ]);
   };
   const removePlanetFromWishlist = (name) => {
     // 🧑🏽‍🚀 Task - Week 2
@@ -69,7 +73,8 @@ export const Destinations = () => {
             </div>
             <button
               className="roundButton"
-              onClick={() => togglePlanetSelection("Europa")}>
+              onClick={() => togglePlanetSelection("Europa")}
+            >
               {isPlanetInWishlist("Europa")
                 ? "REMOVE FROM WISHLIST"
                 : "ADD TO WISHLIST"}
@@ -87,7 +92,8 @@ export const Destinations = () => {
             </div>
             <button
               className="roundButton"
-              onClick={() => togglePlanetSelection("Mars")}>
+              onClick={() => togglePlanetSelection("Mars")}
+            >
               {isPlanetInWishlist("Mars")
                 ? "REMOVE FROM WISHLIST"
                 : "ADD TO WISHLIST"}
@@ -100,7 +106,6 @@ export const Destinations = () => {
 };
 
 export default Destinations;
-
 
 // 🧑🏽‍🚀 Task - Week 4 - part 2
 // Hate to break it to you, but you will have to make some changes to the code you already wrote.
