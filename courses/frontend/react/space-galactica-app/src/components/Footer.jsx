@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from './Footer.module.css';
 
 export const Footer = () => {
@@ -11,18 +12,23 @@ export const Footer = () => {
         <p>Explore the universe and beyond. Your journey to the stars starts here.</p>
         <p>&copy; 2024 Galactica. All rights reserved.</p>
       </div>
-      {/* 🧑🏽‍🚀 Task - Week 2 */}
-      {/* Create a new list for the Pages. */}
-      {/* We need to use the <Link /> component here. */}
-      {/* <div className={styles.pages}>
+     <div className={styles.pages}>
         <h3>Pages</h3>
-        <ul>
-          <li> <Link/> </li>
-          ...
+        <ul className={styles.footerList}>
+          <li> 
+            <Link to="/">Home</Link> 
+          </li>
+          <li> 
+            <Link to="/about">About us</Link> 
+          </li>
+          <li> 
+            <Link to="/destination">Destination</Link> 
+          </li>
+          <li> 
+            <Link to="/collaboration">NASA collaboration</Link> 
+          </li>
         </ul>
-      </div> */}
-      {/* Docs for the Link: https://reactrouter.com/api/components/Link#link. */}
-
+      </div>
             <div className={styles.footerLinks}>
         <h3>Follow us</h3>
         <ul className={styles.footerList}>
