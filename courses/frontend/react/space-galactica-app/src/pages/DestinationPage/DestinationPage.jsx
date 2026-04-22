@@ -7,15 +7,11 @@ export const Destinations = () => {
   const [planetsWishlist, setPlanetsWishlist] = useState([]);
 
   const isPlanetInWishlist = (planetName) => {
-    // 🧑🏽‍🚀 Task - Week 2
-    // This should be a simple function to check if a given planet is selected.
-    // You will need to work with the array of planets wishlist.
+    return planetsWishlist.some((item) => item.name === planetName);
   };
 
   const togglePlanetSelection = (name, thumbnail) => {
-    // 🧑🏽‍🚀 Task - Week 2
-    // When a planet is selected or deselected (toggled), the state of the wishlist planets should be updated accordingly by 
-    // calling the addPlanetToWishlist or removePlanetFromWishlist function. You will need a condition here.
+   
   };
 
   const addPlanetToWishlist = (name, thumbnail) => {
