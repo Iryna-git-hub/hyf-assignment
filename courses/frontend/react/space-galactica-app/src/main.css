@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+  --font-mono:
+    ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
@@ -87,7 +92,6 @@ body {
   overflow-x: hidden;
 }
 
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -103,12 +107,23 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-block-end: var(--spacing-08);
   color: var(--primary-text-color);
 }
 
-p, b, i {
+li {
+  list-style: none;
+}
+
+p,
+b,
+i {
   margin-block-end: var(--spacing-08);
 }
 
@@ -136,10 +151,9 @@ button {
   color: #fff;
 }
 
-
 .card {
   position: relative;
-  padding: var(--spacing-12);
+  padding: var(--spacing-32);
   margin: var(--spacing-16);
 }
 
@@ -206,7 +220,7 @@ button {
 
 .fullBGpicture::before {
   content: "";
-  background: url('/destination/background-destination-desktop.jpg') no-repeat;
+  background: url("/destination/background-destination-desktop.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   background-color: #000;

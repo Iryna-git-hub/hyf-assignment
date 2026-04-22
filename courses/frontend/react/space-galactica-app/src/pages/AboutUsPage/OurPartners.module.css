@@ -1,0 +1,12 @@
+.partnersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  margin: var(--spacing-32);
+  gap: var(--spacing-40);
+  align-items: center;
+}
+
+.partnersListItem img {
+  max-height: 100%;
+  max-width: 120px;
+}
