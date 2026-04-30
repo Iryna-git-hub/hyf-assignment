@@ -31,6 +31,25 @@ const socialMediaItems = [
   },
 ];
 
+const footerPageItems = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About us",
+    link: "/about_us",
+  },
+  {
+    title: "Destination",
+    link: "/destination",
+  },
+  {
+    title: "NASA collaboration",
+    link: "/nasa_collaboration",
+  },
+];
+
 export const Footer = () => {
   const { pathname } = useLocation();
 
@@ -38,24 +57,20 @@ export const Footer = () => {
     <footer className={pathname !== "/" ? styles.footer : styles.hidden}>
       <div className={styles.footerDescription}>
         <h3>Galactica</h3>
-        <p>Explore the universe and beyond. Your journey to the stars starts here.</p>
+        <p>
+          Explore the universe and beyond. Your journey to the stars starts
+          here.
+        </p>
         <p>&copy; 2024 Galactica. All rights reserved.</p>
       </div>
       <div className={styles.pages}>
         <h3>Pages</h3>
         <ul className={styles.footerList}>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About us</Link>
-          </li>
-          <li>
-            <Link to="/destination">Destination</Link>
-          </li>
-          <li>
-            <Link to="/collaboration">NASA collaboration</Link>
-          </li>
+          {footerPageItems.map((item) => (
+            <li key={item.title}>
+              <Link to={item.link}>{item.title}</Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div className={styles.footerLinks}>
