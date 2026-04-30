@@ -43,3 +43,19 @@
 .footerList li {
   padding-block: var(--spacing-04);
 }
+
+.socialMediaList {
+  display: flex;
+  gap: var(--spacing-12);
+}
+
+.socialMediaLink {
+  align-items: center;
+  display: flex;
+  gap: var(--spacing-08);
+}
+
+.socialMediaIcon {
+  height: 20px;
+  width: 20px;
+}
