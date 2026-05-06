@@ -3,6 +3,7 @@ import { Planet } from "../icons/Planet";
 import { Badge } from "./Badge";
 import { NavItem } from "./NavItem";
 import styles from "./Navbar.module.css";
+import { useWishlist } from "../contexts/WishlistContext";
 
 const navbarItems = [
   {
@@ -21,6 +22,7 @@ const navbarItems = [
 
 export const Navbar = () => {
   const currentPath = useLocation().pathname;
+  const { wishlistCount } = useWishlist();
 
   return (
     <header className={styles.headerContainer}>
@@ -48,9 +50,8 @@ export const Navbar = () => {
 
           <li className={styles.wishlistBadge} aria-label="Wishlist"></li>
         </ul>
-        {/* 🧑🏽‍🚀 Task - Week 4 - part 3 */}
-        {/* Take the count of the planets wishlist from the context and display it in the Badge. */}
-        <Badge count={0}>
+       
+        <Badge count={ wishlistCount }>
           <Planet color="white" />
         </Badge>
       </nav>
