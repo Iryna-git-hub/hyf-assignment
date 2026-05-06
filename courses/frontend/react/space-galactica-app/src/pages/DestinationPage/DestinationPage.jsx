@@ -3,11 +3,17 @@ import styles from "./DestinationPage.module.css";
 import { PlanetsWishlistItem } from "./PlanetsWishlistItem";
 import { PlanetCard } from "./PlanetCard";
 import { AddWishlistItem } from "./AddWishlistItem";
+import { useWishlist } from "../../contexts/WishlistContext";
 
 export const Destinations = () => {
-  const [planetsWishlist, setPlanetsWishlist] = useState([]);
+  const {
+    planetsWishlist,
+    addPlanetToWishlist,
+    removePlanetFromWishlist,
+    isPlanetInWishlist,
+    wishlistCount,
+  } = useWishlist();
 
- 
   const togglePlanetSelection = (name, thumbnail) => {
     if (isPlanetInWishlist(name)) {
       removePlanetFromWishlist(name);
@@ -16,10 +22,6 @@ export const Destinations = () => {
     }
   };
 
-  
-  
-
-  
   const wishlistPlanetLabel = wishlistCount === 1 ? "planet" : "planets";
 
   const destinationPlanets = [
@@ -97,7 +99,3 @@ export const Destinations = () => {
 
 export default Destinations;
 
-// 🧑🏽‍🚀 Task - Week 4 - part 2
-// Hate to break it to you, but you will have to make some changes to the code you already wrote.
-// Now that you have context, grab and use the context data in this.
-// You will need to replace some of the variables and functions with the ones from the context.
