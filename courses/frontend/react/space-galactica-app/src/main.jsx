@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage/HomePage.jsx";
 import DestinationPage from "./pages/DestinationPage/DestinationPage.jsx";
 import AboutUsPage from "./pages/AboutUsPage/AboutUsPage.jsx";
 import NasaCollaboration from "./pages/NasaCollaborationPage/NasaCollaborationPage.jsx";
-import { WishlistProvider } from ".contexts/WishlistContext.jsx";
+import { WishlistProvider } from "./contexts/WishlistContext.jsx";
 import "./main.css";
 
 const router = createBrowserRouter([
