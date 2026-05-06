@@ -7,10 +7,7 @@ import { AddWishlistItem } from "./AddWishlistItem";
 export const Destinations = () => {
   const [planetsWishlist, setPlanetsWishlist] = useState([]);
 
-  const isPlanetInWishlist = (planetName) => {
-    return planetsWishlist.some((item) => item.name === planetName);
-  };
-
+ 
   const togglePlanetSelection = (name, thumbnail) => {
     if (isPlanetInWishlist(name)) {
       removePlanetFromWishlist(name);
@@ -19,22 +16,10 @@ export const Destinations = () => {
     }
   };
 
-  const addPlanetToWishlist = (name, thumbnail) => {
-    setPlanetsWishlist((currentWishlist) => [
-      ...currentWishlist,
-      {
-        name,
-        thumbnail,
-      },
-    ]);
-  };
-  const removePlanetFromWishlist = (name) => {
-    setPlanetsWishlist((currentWishlist) =>
-      currentWishlist.filter((item) => item.name !== name),
-    );
-  };
+  
+  
 
-  const wishlistCount = planetsWishlist.length;
+  
   const wishlistPlanetLabel = wishlistCount === 1 ? "planet" : "planets";
 
   const destinationPlanets = [
