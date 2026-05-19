@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #e76e40;
+    --color-secondary: #0fa996;
+}
+
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 20px auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4rem;
+  color: var(--color-primary);
+  margin: 30px 0;
+}
+
+input,
+button {
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+button {
+  background-color: rgb(42 159 100);
+  text-transform: uppercase;
+  font-weight: 800;
+  color: white;
+  margin-left: 15px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+    border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(15, 129, 34);
+  transform: scale(1.05);
+}
+
+.press-area-container {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.press-area-container div {
+  flex: 1;
+  display: flex;
+  background-color: #cff7f2;
+  padding: 20px;
+  border-radius: 8px;
+  height: 60vh;
+  color: var(--color-secondary);
+  font-size: 5rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  display: inline-block;
+  animation: swing 0.5s ease-in-out infinite alternate;
+}
+
+.press-area-container div .displayCount {
+    display: block;
+    font-size: 3rem;
+    color: var(--color-primary);
+}
+
+@keyframes swing {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
