@@ -12,7 +12,7 @@ export const OurCrew = () => {
         <li className={styles.crewItem}>
           <article>
             <img
-              src="../../public/crew/image-anousheh-ansari.png"
+              src="/crew/image-anousheh-ansari.png"
               alt="Sarah Vega photo"
             />
             <header>
@@ -29,7 +29,7 @@ export const OurCrew = () => {
         <li className={styles.crewItem}>
           <article>
             <img
-              src="../../public/crew/image-douglas-hurley.png"
+              src="/crew/image-douglas-hurley.png"
               alt="Dr. Leo Redding photo"
             />
             <header>
@@ -46,7 +46,7 @@ export const OurCrew = () => {
         <li className={styles.crewItem}>
           <article>
             <img
-              src="../../public/crew/image-victor-glover.png"
+              src="/crew/image-victor-glover.png"
               alt="Hana Lee photo"
             />
             <header>
@@ -64,7 +64,7 @@ export const OurCrew = () => {
         <li className={styles.crewItem}>
           <article>
             <img
-              src="../../public/crew/image-mark-shuttleworth.png"
+              src="/crew/image-mark-shuttleworth.png"
               alt="Alex Santos photo"
             />
             <header>
@@ -82,7 +82,7 @@ export const OurCrew = () => {
         <li className={styles.crewItem}>
           <article>
             <img
-              src="../../public/crew/image-anousheh-ansari.png"
+              src="/crew/image-anousheh-ansari.png"
               alt="Maya Patel photo"
             />
             <header>
